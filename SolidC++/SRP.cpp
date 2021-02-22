@@ -1,33 +1,33 @@
 #include "SRP.h"
 double Product::getPrice() {
-	return price;
+	return _price;
 }
 
 string Product::getDescription(){
-    return description;
+    return _description;
 };
 
 
 double Item::subTotal() {
-	return quantity * product.getPrice();
+	return _quantity * _product.getPrice();
 }
 
 Product Item::getProduct() {
-    return product;
+    return _product;
 }
 int Item::getQuantity() {
-    return quantity;
+    return _quantity;
 }
 
 void Invoice::addItem(Item _item)
 {
-    items.push_back(_item);
+    _items.push_back(_item);
 
 }
 
 double Invoice::total() {
     double _total = 0;
-    for (Item& item : items)
+    for (Item& item : _items)
     {
         _total += item.subTotal();
     }
@@ -36,7 +36,7 @@ double Invoice::total() {
 }
 
 list<Item> Invoice::getItems() {
-    return items;
+    return _items;
 }
 
 void SRP::startPrinciple() {

@@ -42,7 +42,7 @@ public:
 class OCP : public SolidPrinciple
 {
 public:
-	OCP(string name) :SolidPrinciple(name) {};
+	OCP() :SolidPrinciple("Example : Open/closed principle") {};
 	void startPrinciple() override;
 };
 

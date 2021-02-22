@@ -20,29 +20,34 @@ int main()
     list<SolidPrinciple*> solid;
 
 
-    //Start example
-    //SRP srp("Example : Single responsibility principle");
+    //Start 
+    //"Example : Single responsibility principle"
+    //SRP srp();
     //solid.push_back(&srp);
 
-    //OCP ocp("Example : Open/closed principle");
+    //"Example : Open/closed principle"
+    //OCP ocp();
     //solid.push_back(&ocp);
 
-    //LSP lsp("Example : Liskov substitution principle");
+    //"Example : Liskov substitution principle"
+    //LSP lsp();
     //solid.push_back(&lsp);
 
-     //ISP isp("Example : Interface segregation principle");
+    //"Example : Interface segregation principle"
+    //ISP isp();
     //solid.push_back(&isp);
 
-     //DIP dip("Example : Dependency inversion principle");
+    //"Example : Dependency inversion principle"
+    //DIP dip();
     //solid.push_back(&dip);
     
     
     //Other example:
-    solid.push_back((SolidPrinciple*)(new SRP("Example : Single responsibility principle")));
-    solid.push_back((SolidPrinciple*)(new OCP("Example : Open/closed principle")));
-    solid.push_back((SolidPrinciple*)(new LSP("Example : Liskov substitution principle")));
-    solid.push_back((SolidPrinciple*)(new ISP("Example : Interface segregation principle")));
-    solid.push_back((SolidPrinciple*)(new DIP("Dependency inversion principle")));
+    solid.push_back((SolidPrinciple*)(new SRP()));
+    solid.push_back((SolidPrinciple*)(new OCP()));
+    solid.push_back((SolidPrinciple*)(new LSP()));
+    solid.push_back((SolidPrinciple*)(new ISP()));
+    solid.push_back((SolidPrinciple*)(new DIP()));
 
     start(solid);
 

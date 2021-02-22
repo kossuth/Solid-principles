@@ -61,7 +61,7 @@ public:
 class LSP : public SolidPrinciple
 {
 public:
-	LSP(string name) :SolidPrinciple(name) {};
+	LSP() :SolidPrinciple("Example : Liskov substitution principle") {};
 	void startPrinciple() override;
 };
 

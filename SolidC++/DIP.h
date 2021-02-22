@@ -97,7 +97,7 @@ private:
 class DIP : public SolidPrinciple
 {
 public:
-	DIP(string name) :SolidPrinciple(name) {};
+	DIP() :SolidPrinciple("Dependency inversion principle") {};
 	void startPrinciple() override;
 };
 

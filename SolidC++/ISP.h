@@ -42,7 +42,7 @@ public:
 class ISP : public SolidPrinciple
 {
 public:
-	ISP(string name) :SolidPrinciple(name) {};
+	ISP() :SolidPrinciple("Example : Interface segregation principle") {};
 	void startPrinciple() override;
 };
 
