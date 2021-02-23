@@ -1,5 +1,6 @@
 # Solid-principles
-c++ solid-principles exercises
+* c++
+* Python
 
 this example is based on the video :
 
