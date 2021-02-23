@@ -10,10 +10,10 @@ private:
 	int _number;
 	
 public:
-	virtual string description() = 0;
+	
 	AccountingDocument(int number) :_number(number) {};
-
 	int getNumber() { return _number; };
+	virtual string description() = 0;
 };
 
 

@@ -25,13 +25,13 @@ public:
 };
 
 
-class Item
+class Order
 {
 private:
     Product _product;
     int _quantity;
 public:
-    Item(Product product, int quantity) : _product(product), _quantity(quantity) {};
+    Order(Product product, int quantity) : _product(product), _quantity(quantity) {};
     double subTotal(void);
     Product getProduct();
     int getQuantity();
@@ -42,15 +42,15 @@ class Invoice {
 private:
     int _numero;
     Client _client;
-    list<Item> _items;
+    list<Order> _orders;
 public:
 
     Invoice(int numero, Client client) :_numero(numero), _client(client) {};
 
-    void addItem(Item item);
+    void addOrder(Order item);
 
     double total();
-    list<Item> getItems();
+    list<Order> getOrders();
 
 };
 

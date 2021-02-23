@@ -8,26 +8,26 @@ string Product::getDescription(){
 };
 
 
-double Item::subTotal() {
+double Order::subTotal() {
 	return _quantity * _product.getPrice();
 }
 
-Product Item::getProduct() {
+Product Order::getProduct() {
     return _product;
 }
-int Item::getQuantity() {
+int Order::getQuantity() {
     return _quantity;
 }
 
-void Invoice::addItem(Item _item)
+void Invoice::addOrder(Order tmpOrder)
 {
-    _items.push_back(_item);
+    _orders.push_back(tmpOrder);
 
 }
 
 double Invoice::total() {
     double _total = 0;
-    for (Item& item : _items)
+    for (Order& item : _orders)
     {
         _total += item.subTotal();
     }
@@ -35,8 +35,8 @@ double Invoice::total() {
     return _total;
 }
 
-list<Item> Invoice::getItems() {
-    return _items;
+list<Order> Invoice::getOrders() {
+    return _orders;
 }
 
 void SRP::startPrinciple() {
@@ -45,20 +45,20 @@ void SRP::startPrinciple() {
 
     Client client("Test", "Solid");
 
-    Item i1(Product("p1", 20.3), 2);
-    Item i2(Product("p2", 30.3), 3);
+    Order order(Product("p1", 20.3), 2);
+    Order order2(Product("p2", 30.3), 3);
 
-    Invoice f1(1123, client);
+    Invoice invoice(1123, client);
 
-    f1.addItem(i1);
-    f1.addItem(i2);
+    invoice.addOrder(order);
+    invoice.addOrder(order2);
     
     // todo OCP - Reporter or Formater.
-    for (Item& it : f1.getItems())
+    for (Order& tmpOrder : invoice.getOrders())
     {
-        Product prod = it.getProduct();
-        std::cout << "Product Description: " << prod.getDescription() <<"\t quantity:"<< it.getQuantity()  << "\t Price: " << prod.getPrice() << "\t subTotal: " << it.subTotal() << "\n";
+        Product prod = tmpOrder.getProduct();
+        std::cout << "Product Description: " << prod.getDescription() <<"\t quantity:"<< tmpOrder.getQuantity()  << "\t Price: " << prod.getPrice() << "\t subTotal: " << tmpOrder.subTotal() << "\n";
     }
 
-    std::cout << "Total : \t" << f1.total() << "\nEnd : "+ getName() + "\n";
+    std::cout << "Total : \t" << invoice.total() << "\nEnd : "+ getName() + "\n";
 }

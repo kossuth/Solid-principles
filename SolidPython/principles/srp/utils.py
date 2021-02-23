@@ -23,7 +23,7 @@ class Product():
         return self.__description
 
 
-class Item():
+class Order():
     __product: Product
     __quantity: int
 
@@ -44,22 +44,22 @@ class Item():
 class Invoice():
     __number: int
     __client: Client
-    __items: list[Item]
+    __orders: list[Order]
 
     def __init__(self, number: int, client: Client):
         self.__number = number
         self.__client = client
-        self.__items = []
+        self.__orders = []
 
-    def add_item(self, item: Item) -> None:
-        self.__items.append(item)
+    def add_order(self, order: Order) -> None:
+        self.__orders.append(order)
 
     def total(self) -> float:
         total = 0.0
-        for item in self.__items:
+        for item in self.__orders:
             total += item.get_sub_total()
 
         return total
 
-    def get_items(self) -> list[Item]:
-        return self.__items
+    def get_orders(self) -> list[Order]:
+        return self.__orders

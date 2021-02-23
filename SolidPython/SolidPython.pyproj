@@ -22,6 +22,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="principles\base.py" />
+    <Compile Include="principles\lsp\base.py" />
+    <Compile Include="principles\lsp\utils.py" />
+    <Compile Include="principles\lsp\__init__.py" />
+    <Compile Include="principles\ocp\base.py" />
+    <Compile Include="principles\ocp\utils.py" />
+    <Compile Include="principles\ocp\__init__.py" />
     <Compile Include="principles\srp\base.py" />
     <Compile Include="principles\srp\utils.py" />
     <Compile Include="principles\srp\__init__.py" />
@@ -30,13 +36,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="principles\" />
+    <Folder Include="principles\lsp\" />
+    <Folder Include="principles\ocp\" />
     <Folder Include="principles\srp\" />
-    <Folder Include="principles\srp\__pycache__\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="principles\srp\__pycache__\base.cpython-39.pyc" />
-    <Content Include="principles\srp\__pycache__\utils.cpython-39.pyc" />
-    <Content Include="principles\srp\__pycache__\__init__.cpython-39.pyc" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
